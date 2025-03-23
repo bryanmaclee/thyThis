@@ -1,0 +1,14 @@
+{
+  "name": "scriml",
+  "module": "transpiler.js",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "node-html-parser": "^7.0.1"
+  }
+}

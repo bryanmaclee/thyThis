@@ -1,0 +1,320 @@
+[
+  {
+    "language": "html",
+    "name": "!DOCTYPE",
+    "openLine": 0,
+    "closeLine": 0,
+    "attributes": {
+      "html": true
+    },
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "html",
+    "openLine": 1,
+    "closeLine": 1,
+    "attributes": {
+      "lang": "*#0"
+    },
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "head",
+    "openLine": 2,
+    "closeLine": 2,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "meta",
+    "openLine": 3,
+    "closeLine": 3,
+    "attributes": {
+      "charset": "*#1"
+    },
+    "selfClosing": true
+  },
+  {
+    "language": "html",
+    "name": "meta",
+    "openLine": 4,
+    "closeLine": 4,
+    "attributes": {
+      "name": "*#2",
+      "content": "*#3"
+    },
+    "selfClosing": true
+  },
+  {
+    "language": "html",
+    "name": "title",
+    "openLine": 5,
+    "closeLine": 5,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "style",
+    "openLine": 6,
+    "closeLine": 6,
+    "attributes": {},
+    "selfClosing": false
+  },
+  "body {",
+  "font-family: Arial, sans-serif;",
+  "background-color: #f4f4f4;",
+  "display: flex;",
+  "justify-content: center;",
+  "align-items: center;",
+  "height: 100vh;",
+  "margin: 0;",
+  "}",
+  ".container {",
+  "background: white;",
+  "padding: 20px;",
+  "border-radius: 10px;",
+  "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);",
+  "width: 300px;",
+  "text-align: center;",
+  "}",
+  "h2 {",
+  "margin: 0 0 10px;",
+  "color: #333;",
+  "}",
+  "input {",
+  "width: 80%;",
+  "padding: 8px;",
+  "margin-bottom: 10px;",
+  "border: 1px solid #ccc;",
+  "border-radius: 5px;",
+  "}",
+  "button {",
+  "padding: 8px 12px;",
+  "border: none;",
+  "background: #28a745;",
+  "color: white;",
+  "border-radius: 5px;",
+  "cursor: pointer;",
+  "transition: background 0.3s;",
+  "}",
+  "button:hover {",
+  "background: #218838;",
+  "}",
+  "ul {",
+  "list-style: none;",
+  "padding: 0;",
+  "margin-top: 10px;",
+  "}",
+  "li {",
+  "background: #f9f9f9;",
+  "margin: 5px 0;",
+  "padding: 8px;",
+  "border-radius: 5px;",
+  "display: flex;",
+  "justify-content: space-between;",
+  "align-items: center;",
+  "}",
+  ".delete-btn {",
+  "background: #dc3545;",
+  "border: none;",
+  "color: white;",
+  "padding: 5px;",
+  "cursor: pointer;",
+  "border-radius: 5px;",
+  "transition: background 3.3s;",
+  "}",
+  ".delete-btn:hover {",
+  "background: #c82333;",
+  "}",
+  {
+    "language": "html",
+    "name": "/style",
+    "openLine": 73,
+    "closeLine": 73,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "/head",
+    "openLine": 74,
+    "closeLine": 74,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "body",
+    "openLine": 75,
+    "closeLine": 75,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "div",
+    "openLine": 76,
+    "closeLine": 76,
+    "attributes": {
+      "class": "*#4"
+    },
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "h2",
+    "openLine": 77,
+    "closeLine": 77,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "input",
+    "openLine": 78,
+    "closeLine": 78,
+    "attributes": {
+      "type": "*#5",
+      "id": "*#6",
+      "placeholder": "*#7"
+    },
+    "selfClosing": true
+  },
+  {
+    "language": "html",
+    "name": "button",
+    "openLine": 79,
+    "closeLine": 79,
+    "attributes": {
+      "onclick": "*#8"
+    },
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "ul",
+    "openLine": 80,
+    "closeLine": 80,
+    "attributes": {
+      "id": "*#9"
+    },
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "/div",
+    "openLine": 81,
+    "closeLine": 81,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "div",
+    "openLine": 82,
+    "closeLine": 82,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "input",
+    "openLine": 83,
+    "closeLine": 83,
+    "attributes": {
+      "type": "*#10",
+      "id": "*#11",
+      "placeholder": "*#12",
+      "onclick": "*#13",
+      "JvaL": "*#14"
+    },
+    "selfClosing": true
+  },
+  "type=*#10",
+  "id=*#11",
+  "placeholder=*#12",
+  "onclick=*#13",
+  "JvaL=*#14",
+  "/>",
+  {
+    "language": "html",
+    "name": "p",
+    "openLine": 90,
+    "closeLine": 90,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "/div",
+    "openLine": 91,
+    "closeLine": 91,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "script",
+    "openLine": 92,
+    "closeLine": 92,
+    "attributes": {},
+    "selfClosing": false
+  },
+  "function addTask() {",
+  "let taskInput = document.getElementById(*#15);",
+  "let taskText = taskInput.value.trim();",
+  "if (taskText === *#16) {",
+  "alert(*#17);",
+  "return;",
+  "}",
+  "let taskList = document.getElementById(*#18);",
+  "let li = document.createElement(*#19);",
+  "li.innerHTML = `",
+  "${taskText}",
+  {
+    "language": "html",
+    "name": "button",
+    "openLine": 104,
+    "closeLine": 104,
+    "attributes": {
+      "class": "*#20",
+      "onclick": "*#21"
+    },
+    "selfClosing": false
+  },
+  "`;",
+  "taskList.appendChild(li);",
+  "taskInput.value = *#22;",
+  "}",
+  "function deleteTask(button) {",
+  "button.parentElement.remove();",
+  "}",
+  {
+    "language": "html",
+    "name": "/script",
+    "openLine": 112,
+    "closeLine": 112,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "/body",
+    "openLine": 113,
+    "closeLine": 113,
+    "attributes": {},
+    "selfClosing": false
+  },
+  {
+    "language": "html",
+    "name": "/html",
+    "openLine": 114,
+    "closeLine": 114,
+    "attributes": {},
+    "selfClosing": false
+  }
+]

@@ -1,0 +1,161 @@
+[
+  "<!DOCTYPE html>",
+  {
+    "tagName": "html",
+    "lang": "en"
+  },
+  {
+    "tagName": "head"
+  },
+  {
+    "tagName": "meta",
+    "charset": "UTF-8"
+  },
+  {
+    "tagName": "meta",
+    "name": "viewport",
+    "content": "width=device-width, initial-scale=1.0"
+  },
+  {
+    "tagName": "title"
+  },
+  {
+    "tagName": "style"
+  },
+  "body {",
+  "font-family: Arial, sans-serif;",
+  "background-color: #f4f4f4;",
+  "display: flex;",
+  "justify-content: center;",
+  "align-items: center;",
+  "height: 100vh;",
+  "margin: 0;",
+  "}",
+  ".container {",
+  "background: white;",
+  "padding: 20px;",
+  "border-radius: 10px;",
+  "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);",
+  "width: 300px;",
+  "text-align: center;",
+  "}",
+  "h2 {",
+  "margin: 0 0 10px;",
+  "color: #333;",
+  "}",
+  "input {",
+  "width: 80%;",
+  "padding: 8px;",
+  "margin-bottom: 10px;",
+  "border: 1px solid #ccc;",
+  "border-radius: 5px;",
+  "}",
+  "button {",
+  "padding: 8px 12px;",
+  "border: none;",
+  "background: #28a745;",
+  "color: white;",
+  "border-radius: 5px;",
+  "cursor: pointer;",
+  "transition: background 0.3s;",
+  "}",
+  "button:hover {",
+  "background: #218838;",
+  "}",
+  "ul {",
+  "list-style: none;",
+  "padding: 0;",
+  "margin-top: 10px;",
+  "}",
+  "li {",
+  "background: #f9f9f9;",
+  "margin: 5px 0;",
+  "padding: 8px;",
+  "border-radius: 5px;",
+  "display: flex;",
+  "justify-content: space-between;",
+  "align-items: center;",
+  "}",
+  ".delete-btn {",
+  "background: #dc3545;",
+  "border: none;",
+  "color: white;",
+  "padding: 5px;",
+  "cursor: pointer;",
+  "border-radius: 5px;",
+  "transition: background 3.3s;",
+  "}",
+  ".delete-btn:hover {",
+  "background: #c82333;",
+  "}",
+  "</style>",
+  "</head>",
+  {
+    "tagName": "body"
+  },
+  {
+    "tagName": "div",
+    "class": "container"
+  },
+  {
+    "tagName": "h2"
+  },
+  {
+    "tagName": "input",
+    "type": "text",
+    "id": "taskInput",
+    "placeholder": "Enter a task"
+  },
+  {
+    "tagName": "button",
+    "onclick": "addTask()"
+  },
+  {
+    "tagName": "ul",
+    "id": "taskList"
+  },
+  "</div>",
+  {
+    "tagName": "div"
+  },
+  "<input",
+  "type=\"text\"",
+  "id=\"taskInput\"",
+  "placeholder=\"Enter a task\"",
+  "onclick=\"alert('Clicked!')\"",
+  "JvaL=\"taskText.trim()\"",
+  "/>",
+  {
+    "tagName": "p"
+  },
+  "</div>",
+  {
+    "tagName": "script"
+  },
+  "function addTask() {",
+  "let taskInput = document.getElementById(\"taskInput\");",
+  "let taskText = taskInput.value.trim();",
+  "if (taskText === \"\") {",
+  "alert(\"Please enter a task!\");",
+  "return;",
+  "}",
+  "let taskList = document.getElementById(\"taskList\");",
+  "let li = document.createElement(\"li\");",
+  "li.innerHTML = `",
+  "${taskText}",
+  {
+    "tagName": "button",
+    "class": "delete-btn",
+    "onclick": "deleteTask(this)"
+  },
+  "`;",
+  "taskList.appendChild(li);",
+  "taskInput.value = \"\";",
+  "}",
+  "function deleteTask(button) {",
+  "button.parentElement.remove();",
+  "}",
+  "</script>",
+  "</body>",
+  "</html>"
+]
