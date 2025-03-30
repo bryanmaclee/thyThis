@@ -114,3 +114,76 @@ async function parseByChar(inputFile, outputFile) {
     console.error("Error:", err);
   }
 }
+
+export function parseSomeJS(jsString) {
+  const jsRegex = /(?<variable>const|let|var)\s+(?<name>[\w$]+)\s*=\s*(?<value>[^;]+);/g;
+  const functionRegex = /function\s+(?<name>[\w$]+)\s*\((?<params>[^)]*)\)\s*\{(?<body>[\s\S]*?)\}/g;
+  const arrowFunctionRegex = /(?<variable>const|let|var)\s+(?<name>[\w$]+)\s*=\s*\((?<params>[^)]*)\)\s*=>\s*\{(?<body>[\s\S]*?)\}/g;
+
+  const variables = [];
+  const functions = [];
+
+  for (const match of jsString.matchAll(jsRegex)) {
+      if (match.groups) {
+          variables.push({
+              type: match.groups.variable,
+              name: match.groups.name,
+              value: match.groups.value.trim()
+          });
+      }
+  }
+
+  for (const match of jsString.matchAll(functionRegex)) {
+      if (match.groups) {
+          functions.push({
+              name: match.groups.name,
+              params: match.groups.params.split(',').map(p => p.trim()).filter(Boolean),
+              body: match.groups.body.trim()
+          });
+      }
+  }
+
+  for (const match of jsString.matchAll(arrowFunctionRegex)) {
+      if (match.groups) {
+          functions.push({
+              name: match.groups.name,
+              params: match.groups.params.split(',').map(p => p.trim()).filter(Boolean),
+              body: match.groups.body.trim(),
+              type: "arrow"
+          });
+      }
+  }
+
+  return {
+      language: "javascript",
+      variables,
+      functions
+  };
+}
+
+
+function findFirstJsKeywordorToken(jsStr) {
+  const jsKeywords = ["const", "let", "var", "function", "=>"];
+  const jsTokens = ["{", "}", "(", ")", "[", "]", ";", ",", ":", "=", "=>"];
+  const jsOperators = ["+", "-", "*", "/", "%", "++", "--", "**", "+=", "-=", "*=", "/=", "%=", "==", "===", "!=", "!==", ">", "<", ">=", "<=", "&&", "||", "!", "&", "|", "^", "~", "<<", ">>", ">>>", "<<=", ">>=", ">>>=", "&=", "|=", "^=", "=>"];
+  let token = "";
+  let i = 0;
+  while (i < jsStr.length) {
+      if (jsStr[i] === " ") {
+          i++;
+          continue;
+      }
+      token += jsStr[i];
+      if (jsKeywords.includes(token)) {
+          return token;
+      }
+      if (jsTokens.includes(token)) {
+          return token;
+      }
+      if (jsOperators.includes(token)) {
+          return token;
+      }
+      i++;
+  }
+  return token;
+}
