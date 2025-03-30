@@ -16,14 +16,14 @@
     "name": "html",
     "openLine": 1,
     "tagEnd": 14,
-    "closeLine": 114,
+    "closeLine": 115,
     "attributes": {
       "lang": "*#0"
     },
     "selfClosing": false,
     "children": [
       2,
-      114
+      115
     ]
   },
   {
@@ -46,7 +46,7 @@
     "tagEnd": 19,
     "closeLine": 3,
     "attributes": {
-      "charset": "*#0"
+      "charset": "*#1"
     },
     "selfClosing": true,
     "children": []
@@ -58,8 +58,8 @@
     "tagEnd": 28,
     "closeLine": 4,
     "attributes": {
-      "name": "*#0",
-      "content": "*#0"
+      "name": "*#2",
+      "content": "*#3"
     },
     "selfClosing": true,
     "children": []
@@ -121,7 +121,7 @@
   },
   {
     "language": "css",
-    "selectorType": "unknown",
+    "selectorType": "element",
     "selector": "h2",
     "attributes": {
       "margin": "0 0 10px",
@@ -247,12 +247,12 @@
     "name": "body",
     "openLine": 19,
     "tagEnd": 5,
-    "closeLine": 57,
+    "closeLine": 58,
     "attributes": {},
     "selfClosing": false,
     "children": [
       20,
-      57
+      58
     ]
   },
   {
@@ -262,7 +262,7 @@
     "tagEnd": 14,
     "closeLine": 25,
     "attributes": {
-      "class": "*#0"
+      "class": "*#4"
     },
     "selfClosing": false,
     "children": [
@@ -290,9 +290,9 @@
     "tagEnd": 40,
     "closeLine": 22,
     "attributes": {
-      "type": "*#0",
-      "id": "*#0",
-      "placeholder": "*#0"
+      "type": "*#5",
+      "id": "*#6",
+      "placeholder": "*#7"
     },
     "selfClosing": true,
     "children": []
@@ -304,7 +304,7 @@
     "tagEnd": 19,
     "closeLine": 23,
     "attributes": {
-      "onclick": "*#0"
+      "onclick": "*#8"
     },
     "selfClosing": false,
     "children": [
@@ -319,7 +319,7 @@
     "tagEnd": 10,
     "closeLine": 24,
     "attributes": {
-      "id": "*#0"
+      "id": "*#9"
     },
     "selfClosing": false,
     "children": [
@@ -356,15 +356,15 @@
   {
     "language": "html",
     "name": "input",
-    "openLine": 61,
-    "tagEnd": 61,
-    "closeLine": 61,
+    "openLine": 66,
+    "tagEnd": 66,
+    "closeLine": 66,
     "attributes": {
-      "type": "*#0",
-      "id": "*#0",
-      "placeholder": "*#0",
-      "onclick": "*#0",
-      "JvaL": "*#0"
+      "type": "*#10",
+      "id": "*#11",
+      "placeholder": "*#12",
+      "onclick": "*#13",
+      "JvaL": "*#14"
     },
     "selfClosing": true,
     "children": []
@@ -400,32 +400,40 @@
     "name": "script",
     "openLine": 30,
     "tagEnd": 7,
-    "closeLine": 50,
+    "closeLine": 51,
     "attributes": {},
     "selfClosing": false,
     "children": [
       31,
-      50
+      51
     ]
   },
   {
+    "language": "javascript",
     "declaration": {
-      "text": "function addTask() ",
-      "type": [
-        "function",
-        "addTask"
-      ],
+      "text": "const foo = *#1",
+      "type": "const",
+      "name": "foo",
       "params": []
     },
-    "body": " let taskInput = document.getElementById(*#0); let taskText = taskInput.value.trim(); if (taskText === *#0) { alert(*#0); return; } let taskList = document.getElementById(*#0); let li = document.createElement(*#0); li.innerHTML = ` ${taskText} <button class=*#0 onclick=*#0>X</button> `; taskList.appendChild(li); taskInput.value = *#0; "
+    "body": "const foo = *#1"
   },
   {
+    "language": "javascript",
+    "declaration": {
+      "text": "function addTask() ",
+      "type": "function",
+      "name": "addTask",
+      "params": []
+    },
+    "body": " let taskInput = document.getElementById(*#16); let taskText = taskInput.value.trim(); if (taskText === *#17) { alert(*#18); return; } let taskList = document.getElementById(*#19); let li = document.createElement(*#20); li.innerHTML = ` ${taskText} <button class=*#21 onclick=*#22>X</button> `; taskList.appendChild(li); taskInput.value = *#23; "
+  },
+  {
+    "language": "javascript",
     "declaration": {
       "text": "function deleteTask(button) ",
-      "type": [
-        "function",
-        "deleteTask"
-      ],
+      "type": "function",
+      "name": "deleteTask",
       "params": [
         "button"
       ]
@@ -435,21 +443,8 @@
   {
     "language": "html",
     "name": "/script",
-    "openLine": 33,
-    "tagEnd": 8,
-    "closeLine": 33,
-    "attributes": {},
-    "selfClosing": false,
-    "children": [
-      34,
-      33
-    ]
-  },
-  {
-    "language": "html",
-    "name": "/body",
     "openLine": 34,
-    "tagEnd": 6,
+    "tagEnd": 8,
     "closeLine": 34,
     "attributes": {},
     "selfClosing": false,
@@ -460,7 +455,7 @@
   },
   {
     "language": "html",
-    "name": "/html",
+    "name": "/body",
     "openLine": 35,
     "tagEnd": 6,
     "closeLine": 35,
@@ -469,6 +464,19 @@
     "children": [
       36,
       35
+    ]
+  },
+  {
+    "language": "html",
+    "name": "/html",
+    "openLine": 36,
+    "tagEnd": 6,
+    "closeLine": 36,
+    "attributes": {},
+    "selfClosing": false,
+    "children": [
+      37,
+      36
     ]
   }
 ]

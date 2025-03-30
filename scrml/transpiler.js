@@ -1,7 +1,10 @@
 import { buildTagObj } from "./dep/mods/buildTagObj";
 import { transformHTML, joinMultilineTag } from "./dep/mods/transformHTML";
 import { isCSSSyntax, parseCSS } from "./dep/mods/cssParser";
-import { prarseJs } from "./dep/mods/jsParserB.js";
+import { parseJs } from "./dep/mods/jsParserB.js";
+// import { parseJavaScriptStatements, codeSample } from "./dep/mods/parseExper.js";
+
+// console.log(parseJavaScriptStatements(codeSample));
 
 async function main() {
   const inputFile = "exampleToDo.html";
@@ -39,7 +42,7 @@ async function main() {
           lines[i] = parseCSS(codeBlock[0]);
         }else{
           // lines[i] = parseSomeJS(codeBlock[0]);
-          lines[i] = prarseJs(codeBlock[0]);
+          lines[i] = parseJs(codeBlock[0]);
         }
         // lines[i] = codeBlock[0];
 

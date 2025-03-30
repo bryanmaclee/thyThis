@@ -37,10 +37,14 @@ export function parseCSS(cssString) {
             selectorType = 'class';
         } else if (selector.startsWith('#')) {
             selectorType = 'id';
-        } else if (/^[a-z]+$/i.test(selector)) {
-            selectorType = 'element';
+        } else {
+            selectorType = 'element'
         }
+        // else if (/^[a-z]+$/i.test(selector)) {
+        //     selectorType = 'element';
+        // }
 
+        console.log(selector)
         return {
             language: "css",
             selectorType,

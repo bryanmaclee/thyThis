@@ -1,10 +1,21 @@
 
-
-export function prarseJs(jsStr) {
+const sturn = {
+    // js_for : /\bfor\s*\(\s*([^;]*?)\s*;\s*([^;]*?)\s*;\s*([^)]*?)\s*\)\s*\{/
+    js_for: /\bfor\s*\(\s*([^;]*?)\s*;\s*([^;]*?)\s*;\s*([^)]*?)\s*\)/,
+    js_if: /\bif\s*\(\s*(.*?)\s*\)/,
+    js_else_if: /\belse\s+if\s*\(\s*(.*?)\s*\)/,
+    js_else: /\belse\b\s*\{/,
+    js_while: /\bwhile\s*\(\s*(.*?)\s*\)/,
+    js_do_while: /\bdo\b(?:\{[\s\S]*?\}|\s*\S[\s\S]*?)\bwhile\s*\(\s*(.*?)\s*\)\s*;/,
+    js_switch: /\bswitch\s*\(\s*(.*?)\s*\)\s*\{/
+}
+export function parseJs(jsStr) {
+    // console.log(jsStr)
     const splitJs = splitJS(jsStr)
     const decTypeObj = decType(splitJs[0])
-    console.log(decTypeObj)
+    // console.log(decTypeObj)
     const statementObj = {
+        language: 'javascript',
         declaration: {
             text: splitJs[0],
             type: decTypeObj ? decTypeObj[0] : null,
@@ -15,7 +26,6 @@ export function prarseJs(jsStr) {
         body: splitJs[1],
     }
     return statementObj
-
 }
 
 function splitJS(jsStr) {
@@ -36,7 +46,7 @@ function decType(declaration) {
 
     if (decMatch) {
         const paramMatch = declaration.match(parameterRegex);
-        return [decMatch[0], decMatch[1], paramMatch ? paramMatch[1].split(",").map(param => param.trim()) : []];
+        return [decMatch[0][0], decMatch[0][1], paramMatch ? paramMatch[1].split(",").map(param => param.trim()) : []];
     }
     return null;
 }
