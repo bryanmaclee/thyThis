@@ -1,20 +1,48 @@
-
 export function buildTagObj(tagLine, tagStart, tagEnd, i, lines) {
+  // console.log(tagEnd);
+  const openTagRegex = /<[^/][^>]*>/;
+  const closeTagRegex = /<\/[^>]+>/;
+  const contentBetweenTagsRegex = /<[^/][^>]*>(.*?)<\/[^>]+>/;
+  const rareHtmlRegex = /<\!([A-Za-z\-]+)([^>]*?)\>/;
+
+
+  if (tagLine.test(closeTagRegex) || tagLine.test(rareHtmlRegex)) {
+    console.log("this tag is a closing tag or a rare html tag");
+    return;
+  }
+
+
   const tag = tagLine.slice(tagStart + 1, tagEnd).trim();
+  console.log(tag);
   const attribs = tag.split(" ");
+  // console.log(attribs);
   const attribsObj = buildAttributes(attribs);
   const tagClosedAt = findClosingTag(attribs[0], lines, i);
+  console.log(tagClosedAt, " = ", i);
   const selfCloses = tag.endsWith("/") || tagClosedAt === lines.length;
+  let tagStrStartToEnd = "";
+  // const childText = tagLine.slice(tagEnd + 1, lines[i].length).trim();
+  if (tagClosedAt === i) {
+    console.log("this is the tagLine" , tagLine);
+    tagStrStartToEnd = tagLine.match(contentBetweenTagsRegex)[1];
+    console.log(tagStrStartToEnd);
+  }else {
+       tagStrStartToEnd = lines.slice(i+1, tagClosedAt === lines.length ? i : tagClosedAt).join(" ");
+  console.log(attribs[0], " = \n", tagStrStartToEnd , "\n");
+  }
+
+  // console.log(childText);
 
   return {
     language: "html",
     name: attribs[0],
-    openLine: i, // Line number
-    tagEnd: tagEnd, // Tag end index
-    closeLine: tagClosedAt === lines.length ? i : tagClosedAt, // Close line number
-    attributes: attribsObj.reduce((acc, curr) => ({ ...acc, ...curr }), {}), // Merge attributes into a single object
-    selfClosing: selfCloses, // Check if the tag is self-closing
-    children: selfCloses ? [] : [i + 1, tagClosedAt], // Get the children of the tag
+    openLine: i,
+    tagEnd,
+    closeLine: tagClosedAt === lines.length ? i : tagClosedAt,
+    attributes: attribsObj.reduce((acc, curr) => ({ ...acc, ...curr }), {}),
+    selfClosing: selfCloses,
+    // childrenText: childText,
+    children: selfCloses ? [] : [i, tagClosedAt],
   };
 }
 
@@ -27,7 +55,7 @@ function buildAttributes(attribs) {
     } else if (attrib.endsWith("/")) {
       return;
     }
-    return { [attrib]: true }; // Boolean attribute (e.g., <input checked>)
+    return { [attrib]: true };
   });
 }
 
@@ -43,3 +71,14 @@ function findClosingTag(name, lines, i) {
   return i;
 }
 
+
+export function joinMultilineTag(lines, i, j) {
+  while (
+    j < lines.length &&
+    !/\s>/.test(lines[j]) &&
+    !lines[j].includes("/>")
+  ) {
+    j++;
+  }
+  return [lines.slice(i, j + 1).join(" "), j];
+}

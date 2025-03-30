@@ -44,7 +44,7 @@ export function parseCSS(cssString) {
         //     selectorType = 'element';
         // }
 
-        console.log(selector)
+        // console.log(selector)
         return {
             language: "css",
             selectorType,

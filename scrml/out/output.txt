@@ -22,7 +22,7 @@
     },
     "selfClosing": false,
     "children": [
-      2,
+      1,
       115
     ]
   },
@@ -35,7 +35,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      3,
+      2,
       74
     ]
   },
@@ -73,7 +73,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      6,
+      5,
       5
     ]
   },
@@ -86,7 +86,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      7,
+      6,
       73
     ]
   },
@@ -225,7 +225,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      18,
+      17,
       17
     ]
   },
@@ -238,7 +238,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      19,
+      18,
       18
     ]
   },
@@ -251,7 +251,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      20,
+      19,
       58
     ]
   },
@@ -266,7 +266,7 @@
     },
     "selfClosing": false,
     "children": [
-      21,
+      20,
       25
     ]
   },
@@ -279,7 +279,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      22,
+      21,
       21
     ]
   },
@@ -308,7 +308,7 @@
     },
     "selfClosing": false,
     "children": [
-      24,
+      23,
       23
     ]
   },
@@ -323,7 +323,7 @@
     },
     "selfClosing": false,
     "children": [
-      25,
+      24,
       24
     ]
   },
@@ -336,7 +336,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      26,
+      25,
       25
     ]
   },
@@ -349,7 +349,7 @@
     "attributes": {},
     "selfClosing": false,
     "children": [
-      27,
+      26,
       35
     ]
   },
@@ -372,40 +372,40 @@
   {
     "language": "html",
     "name": "p",
-    "openLine": 28,
+    "openLine": 34,
     "tagEnd": 2,
-    "closeLine": 28,
+    "closeLine": 34,
     "attributes": {},
     "selfClosing": false,
     "children": [
-      29,
-      28
+      34,
+      34
     ]
   },
   {
     "language": "html",
     "name": "/div",
-    "openLine": 29,
+    "openLine": 35,
     "tagEnd": 5,
-    "closeLine": 29,
+    "closeLine": 35,
     "attributes": {},
     "selfClosing": false,
     "children": [
-      30,
-      29
+      35,
+      35
     ]
   },
   {
     "language": "html",
     "name": "script",
-    "openLine": 30,
+    "openLine": 36,
     "tagEnd": 7,
-    "closeLine": 51,
+    "closeLine": 57,
     "attributes": {},
     "selfClosing": false,
     "children": [
-      31,
-      51
+      36,
+      57
     ]
   },
   {
@@ -431,11 +431,13 @@
   {
     "language": "javascript",
     "declaration": {
-      "text": "function deleteTask(button) ",
+      "text": "function deleteTask(button, useless, another) ",
       "type": "function",
       "name": "deleteTask",
       "params": [
-        "button"
+        "button",
+        "useless",
+        "another"
       ]
     },
     "body": " button.parentElement.remove(); "
@@ -443,40 +445,40 @@
   {
     "language": "html",
     "name": "/script",
-    "openLine": 34,
+    "openLine": 40,
     "tagEnd": 8,
-    "closeLine": 34,
+    "closeLine": 40,
     "attributes": {},
     "selfClosing": false,
     "children": [
-      35,
-      34
+      40,
+      40
     ]
   },
   {
     "language": "html",
     "name": "/body",
-    "openLine": 35,
+    "openLine": 41,
     "tagEnd": 6,
-    "closeLine": 35,
+    "closeLine": 41,
     "attributes": {},
     "selfClosing": false,
     "children": [
-      36,
-      35
+      41,
+      41
     ]
   },
   {
     "language": "html",
     "name": "/html",
-    "openLine": 36,
+    "openLine": 42,
     "tagEnd": 6,
-    "closeLine": 36,
+    "closeLine": 42,
     "attributes": {},
     "selfClosing": false,
     "children": [
-      37,
-      36
+      42,
+      42
     ]
   }
 ]

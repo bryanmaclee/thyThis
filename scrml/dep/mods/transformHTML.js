@@ -15,9 +15,9 @@ function removeComments(data) {
     .replace(/\/\*[\s\S]*?\*\//g, ""); // Remove HTML, JS, and CSS comments
 }
 
-  const compiler = {
-    stringReplacements: [],
-  };
+const compiler = {
+  stringReplacements: [],
+};
 
 function replaceQuoteText(data) {
   const regex = /(["'])(?:\\\1|.)*?\1/;
@@ -33,9 +33,3 @@ function replaceQuoteText(data) {
   return data; // Return the modified data if no more quoted text is found
 }
 
-export function joinMultilineTag(lines, i, j) {
-  while (j < lines.length && (!/\s>/.test(lines[j]) && !lines[j].includes("/>"))) {
-    j++;
-  }
-  return [lines.slice(i, j + 1).join(" "), j];
-}
