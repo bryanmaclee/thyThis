@@ -6,7 +6,7 @@ import { buildAst } from "./dep/mods/buildAST.js";
 // import { parseJavaScriptStatements, codeSample } from "./dep/mods/parseExper.js";
 
 // console.log(parseJavaScriptStatements(codeSample));
-function multiLineHtml(lines, builtLines, tagStart, i, j) {
+export function multiLineHtml(lines, builtLines, tagStart, i, j) {
   // console.log("built lines: ", builtLines);
   const multiLineTag = joinMultilineTag(lines, i, i + 1);
   // lines.splice(i, multiLineTag[1] - i + 1, multiLineTag[0]);
@@ -82,9 +82,9 @@ async function main() {
   await Bun.write(outputFile, JSON.stringify(jsonNested, null, 2));
 }
 
-main().then(() => {
-  console.log("Transformation complete. Check output.txt for results.");
-});
+// main().then(() => {
+//   console.log("Transformation is complete. Check output.txt for results.");
+// });
 
 function identifyLangAgnosticScope(lines, i, j) {
   const openTagRegex = /<[^/][^>]*>/;
@@ -99,7 +99,7 @@ function identifyLangAgnosticScope(lines, i, j) {
   return [lines.slice(i, j).join(" "), j];
 }
 
-function identifyCodeBlock(lines, i, j) {
+export function identifyCodeBlock(lines, i, j) {
   let openScope = 0;
   while (j < lines.length) {
     if (lines[j].includes("{")) openScope++;

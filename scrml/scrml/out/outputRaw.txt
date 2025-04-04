@@ -1,5 +1,5 @@
 [
-  "<html lang=*#0>",
+  "<html *I lang=*#0>",
   "<head>",
   "<meta charset=*#1 />",
   "<meta name=*#2 content=*#3 />",

@@ -2,9 +2,10 @@
   "language": "html",
   "name": "html",
   "openLine": 0,
-  "tagEnd": 14,
+  "tagEnd": 17,
   "closeLine": 114,
   "attributes": {
+    "*I": true,
     "lang": "*#0"
   },
   "selfClosing": false,
