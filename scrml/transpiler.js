@@ -2,6 +2,7 @@ import { buildTagObj, joinMultilineTag } from "./dep/mods/buildTagObj";
 import { transformHTML } from "./dep/mods/transformHTML";
 import { isCSSSyntax, parseCSS } from "./dep/mods/cssParser";
 import { parseJs } from "./dep/mods/jsParserB.js";
+import { buildAst } from "./dep/mods/buildAST.js";
 // import { parseJavaScriptStatements, codeSample } from "./dep/mods/parseExper.js";
 
 // console.log(parseJavaScriptStatements(codeSample));
@@ -30,7 +31,9 @@ function multiLineHtml(lines, builtLines, tagStart, i, j) {
 async function main() {
   // const inputFile = "./scrml/exampleToDo.html";
   const inputFile = "exampleToDo.html";
-  const outputFile = "out/output.txt";
+  const outputFile = "out/output.json";
+  const outputText = "out/output.txt";
+  const flatJson = "out/flat.json";
   const outputRaw = "./scrml/out/outputRaw.txt";
   const outputCSS = "./scrml/out/outputCSS.txt";
   const outputJS = "./scrml/out/outputJS.txt";
@@ -71,12 +74,30 @@ async function main() {
     }
   }
   // console.log(lines.length);
-  await Bun.write(outputFile, JSON.stringify(builtLines, null, 2));
+  const jsonFlat = JSON.stringify(builtLines, null, 2);
+  // console.log(jsonFlat)
+  await Bun.write(flatJson, jsonFlat);
+  const jsonNested = buildAst(builtLines)
+  // console.log(jsonNested)
+  await Bun.write(outputFile, JSON.stringify(jsonNested, null, 2));
 }
 
 main().then(() => {
   console.log("Transformation complete. Check output.txt for results.");
 });
+
+function identifyLangAgnosticScope(lines, i, j) {
+  const openTagRegex = /<[^/][^>]*>/;
+  const closeTagRegex = /<\/[^>]+>/;
+  let openScope = 0;
+  while (j < lines.length) {
+    if (lines[j].includes("{") || openTagRegex.test(lines[j])) openScope++;
+    if (lines[j].includes("}") || closeTagRegex.test(lines[j])) openScope--;
+    j++;
+    if (openScope === 0) break;
+  }
+  return [lines.slice(i, j).join(" "), j];
+}
 
 function identifyCodeBlock(lines, i, j) {
   let openScope = 0;

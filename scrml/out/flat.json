@@ -1,0 +1,388 @@
+[
+  {
+    "language": "html",
+    "name": "html",
+    "openLine": 0,
+    "tagEnd": 14,
+    "closeLine": 114,
+    "attributes": {
+      "lang": "*#0"
+    },
+    "selfClosing": false,
+    "children": {
+      "fromLine": 0,
+      "toLine": 114
+    }
+  },
+  {
+    "language": "html",
+    "name": "head",
+    "openLine": 1,
+    "tagEnd": 5,
+    "closeLine": 73,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 1,
+      "toLine": 73
+    }
+  },
+  {
+    "language": "html",
+    "name": "meta",
+    "openLine": 2,
+    "tagEnd": 19,
+    "closeLine": 2,
+    "attributes": {
+      "charset": "*#1"
+    },
+    "selfClosing": true,
+    "children": []
+  },
+  {
+    "language": "html",
+    "name": "meta",
+    "openLine": 3,
+    "tagEnd": 28,
+    "closeLine": 3,
+    "attributes": {
+      "name": "*#2",
+      "content": "*#3"
+    },
+    "selfClosing": true,
+    "children": []
+  },
+  {
+    "language": "html",
+    "name": "title",
+    "openLine": 4,
+    "tagEnd": 6,
+    "closeLine": 4,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 4,
+      "toLine": 4
+    }
+  },
+  {
+    "language": "html",
+    "name": "style",
+    "openLine": 5,
+    "tagEnd": 6,
+    "closeLine": 72,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 5,
+      "toLine": 72
+    }
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "body",
+    "attributes": {
+      "font-family": "Arial, sans-serif",
+      "background-color": "#f4f4f4",
+      "display": "flex",
+      "justify-content": "center",
+      "align-items": "center",
+      "height": "100vh",
+      "margin": "0"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "class",
+    "selector": ".container",
+    "attributes": {
+      "background": "white",
+      "padding": "20px",
+      "border-radius": "10px",
+      "box-shadow": "0 4px 8px rgba(0, 0, 0, 0.2)",
+      "width": "300px",
+      "text-align": "center"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "h2",
+    "attributes": {
+      "margin": "0 0 10px",
+      "color": "#333"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "input",
+    "attributes": {
+      "width": "80%",
+      "padding": "8px",
+      "margin-bottom": "10px",
+      "border": "1px solid #ccc",
+      "border-radius": "5px"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "button",
+    "attributes": {
+      "padding": "8px 12px",
+      "border": "none",
+      "background": "#28a745",
+      "color": "white",
+      "border-radius": "5px",
+      "cursor": "pointer",
+      "transition": "background 0.3s"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "hover",
+    "attributes": {
+      "background": "#218838"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "ul",
+    "attributes": {
+      "list-style": "none",
+      "padding": "0",
+      "margin-top": "10px"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "li",
+    "attributes": {
+      "background": "#f9f9f9",
+      "margin": "5px 0",
+      "padding": "8px",
+      "border-radius": "5px",
+      "display": "flex",
+      "justify-content": "space-between",
+      "align-items": "center"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "class",
+    "selector": ".delete-btn",
+    "attributes": {
+      "background": "#dc3545",
+      "border": "none",
+      "color": "white",
+      "padding": "5px",
+      "cursor": "pointer",
+      "border-radius": "5px",
+      "transition": "background 3.3s"
+    },
+    "children": []
+  },
+  {
+    "language": "css",
+    "selectorType": "element",
+    "selector": "hover",
+    "attributes": {
+      "background": "#c82333"
+    },
+    "children": []
+  },
+  null,
+  null,
+  {
+    "language": "html",
+    "name": "body",
+    "openLine": 18,
+    "tagEnd": 5,
+    "closeLine": 57,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 18,
+      "toLine": 57
+    }
+  },
+  {
+    "language": "html",
+    "name": "div",
+    "openLine": 19,
+    "tagEnd": 14,
+    "closeLine": 24,
+    "attributes": {
+      "class": "*#4"
+    },
+    "selfClosing": false,
+    "children": {
+      "fromLine": 19,
+      "toLine": 24
+    }
+  },
+  {
+    "language": "html",
+    "name": "h2",
+    "openLine": 20,
+    "tagEnd": 3,
+    "closeLine": 20,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 20,
+      "toLine": 20
+    }
+  },
+  {
+    "language": "html",
+    "name": "input",
+    "openLine": 21,
+    "tagEnd": 40,
+    "closeLine": 21,
+    "attributes": {
+      "type": "*#5",
+      "id": "*#6",
+      "placeholder": "*#7"
+    },
+    "selfClosing": true,
+    "children": []
+  },
+  {
+    "language": "html",
+    "name": "button",
+    "openLine": 22,
+    "tagEnd": 19,
+    "closeLine": 22,
+    "attributes": {
+      "onclick": "*#8"
+    },
+    "selfClosing": false,
+    "children": {
+      "fromLine": 22,
+      "toLine": 22
+    }
+  },
+  {
+    "language": "html",
+    "name": "ul",
+    "openLine": 23,
+    "tagEnd": 10,
+    "closeLine": 23,
+    "attributes": {
+      "id": "*#9"
+    },
+    "selfClosing": false,
+    "children": {
+      "fromLine": 23,
+      "toLine": 23
+    }
+  },
+  null,
+  {
+    "language": "html",
+    "name": "div",
+    "openLine": 25,
+    "tagEnd": 4,
+    "closeLine": 34,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 25,
+      "toLine": 34
+    }
+  },
+  {
+    "language": "html",
+    "name": "input",
+    "openLine": 66,
+    "tagEnd": 66,
+    "closeLine": 66,
+    "attributes": {
+      "type": "*#10",
+      "id": "*#11",
+      "placeholder": "*#12",
+      "onclick": "*#13",
+      "JvaL": "*#14"
+    },
+    "selfClosing": true,
+    "children": []
+  },
+  {
+    "language": "html",
+    "name": "p",
+    "openLine": 33,
+    "tagEnd": 2,
+    "closeLine": 33,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 33,
+      "toLine": 33
+    }
+  },
+  null,
+  {
+    "language": "html",
+    "name": "script",
+    "openLine": 35,
+    "tagEnd": 7,
+    "closeLine": 56,
+    "attributes": {},
+    "selfClosing": false,
+    "children": {
+      "fromLine": 35,
+      "toLine": 56
+    }
+  },
+  {
+    "language": "javascript",
+    "declaration": {
+      "text": "const foo = *#1",
+      "type": "const",
+      "name": "foo",
+      "params": []
+    },
+    "body": "const foo = *#1"
+  },
+  {
+    "language": "javascript",
+    "declaration": {
+      "text": "function addTask() ",
+      "type": "function",
+      "name": "addTask",
+      "params": []
+    },
+    "body": " let taskInput = document.getElementById(*#16); let taskText = taskInput.value.trim(); if (taskText === *#17) { alert(*#18); return; } let taskList = document.getElementById(*#19); let li = document.createElement(*#20); li.innerHTML = ` ${taskText} <button class=*#21 onclick=*#22>X</button> `; taskList.appendChild(li); taskInput.value = *#23; "
+  },
+  {
+    "language": "javascript",
+    "declaration": {
+      "text": "function deleteTask(button, useless, another) ",
+      "type": "function",
+      "name": "deleteTask",
+      "params": [
+        "button",
+        "useless",
+        "another"
+      ]
+    },
+    "body": " button.parentElement.remove(); "
+  },
+  null,
+  null,
+  null
+]

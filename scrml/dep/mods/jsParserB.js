@@ -40,9 +40,6 @@ function decType(declaration) {
     /\b(const|let|var|function|if|for|switch|while|do|class)\b\s+(\w+)/g;
 
   const parameterRegex = /\(([^)]+)\)/;
-//   const decMatch = declaration.match(typeRegex);
-
-// console.log(declaration)
   const matches = [...declaration.matchAll(typeRegex)];
 
   const decMatch = matches.map((match) => [match[1], match[2]]);

@@ -6,33 +6,24 @@ export function buildTagObj(tagLine, tagStart, tagEnd, i, lines) {
   const rareHtmlRegex = /<\!([A-Za-z\-]+)([^>]*?)\>/;
 
 
-  if (tagLine.test(closeTagRegex) || tagLine.test(rareHtmlRegex)) {
-    console.log("this tag is a closing tag or a rare html tag");
+  if ((closeTagRegex.test(tagLine) && !openTagRegex.test(tagLine)) || rareHtmlRegex.test(tagLine)) {
+    // console.log("this is a closing or rare html tag ", tagLine);
     return;
   }
 
 
   const tag = tagLine.slice(tagStart + 1, tagEnd).trim();
-  console.log(tag);
   const attribs = tag.split(" ");
-  // console.log(attribs);
   const attribsObj = buildAttributes(attribs);
   const tagClosedAt = findClosingTag(attribs[0], lines, i);
-  console.log(tagClosedAt, " = ", i);
   const selfCloses = tag.endsWith("/") || tagClosedAt === lines.length;
   let tagStrStartToEnd = "";
-  // const childText = tagLine.slice(tagEnd + 1, lines[i].length).trim();
-  if (tagClosedAt === i) {
-    console.log("this is the tagLine" , tagLine);
+  if (tagClosedAt === i && !selfCloses) {
     tagStrStartToEnd = tagLine.match(contentBetweenTagsRegex)[1];
-    console.log(tagStrStartToEnd);
   }else {
        tagStrStartToEnd = lines.slice(i+1, tagClosedAt === lines.length ? i : tagClosedAt).join(" ");
-  console.log(attribs[0], " = \n", tagStrStartToEnd , "\n");
   }
-
-  // console.log(childText);
-
+  
   return {
     language: "html",
     name: attribs[0],
@@ -41,8 +32,8 @@ export function buildTagObj(tagLine, tagStart, tagEnd, i, lines) {
     closeLine: tagClosedAt === lines.length ? i : tagClosedAt,
     attributes: attribsObj.reduce((acc, curr) => ({ ...acc, ...curr }), {}),
     selfClosing: selfCloses,
-    // childrenText: childText,
-    children: selfCloses ? [] : [i, tagClosedAt],
+    // childrenText: tagStrStartToEnd,
+    children: selfCloses ? [] : {fromLine: i, toLine: tagClosedAt},
   };
 }
 
@@ -71,7 +62,6 @@ function findClosingTag(name, lines, i) {
   return i;
 }
 
-
 export function joinMultilineTag(lines, i, j) {
   while (
     j < lines.length &&
@@ -80,5 +70,6 @@ export function joinMultilineTag(lines, i, j) {
   ) {
     j++;
   }
+  // console.log(lines.slice(i, j + 1).join(" "));
   return [lines.slice(i, j + 1).join(" "), j];
 }
