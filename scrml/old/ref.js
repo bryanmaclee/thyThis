@@ -162,6 +162,20 @@ export function parseSomeJS(jsString) {
 }
 
 
+function Split(str, splitter, side) {
+  // const spl = str.split(splitter);
+  const spl = [];
+  while (str.includes(splitter)) {
+    let index = str.indexOf(splitter);
+    if (side > 0) index += splitter.length;
+    if (side < 0) index -= splitter.length;
+    spl.push(str.slice(0, index));
+    str = str.slice(index + 1);
+  }
+  // else if (side > 0) return splitter + spl[1];
+  return spl;
+}
+
 function findFirstJsKeywordorToken(jsStr) {
   const jsKeywords = ["const", "let", "var", "function", "=>"];
   const jsTokens = ["{", "}", "(", ")", "[", "]", ";", ",", ":", "=", "=>"];
