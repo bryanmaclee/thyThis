@@ -11,7 +11,7 @@ export function multiLineHtml(lines, builtLines, tagStart, i, j) {
   const multiLineTag = joinMultilineTag(lines, i, i + 1);
   // lines.splice(i, multiLineTag[1] - i + 1, multiLineTag[0]);
   // const extracted = lines.slice(i, multiLineTag[1] + 1).join(" ");
-  // console.log(multiLineTag);
+  console.log("in yo face" , multiLineTag);
   // lines[i] = multiLineTag[0];
   // console.log(lines[i]);
   const tagTerminatedAt = multiLineTag[0].indexOf(">", tagStart);

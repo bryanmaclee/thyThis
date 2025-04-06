@@ -11,6 +11,7 @@ const sturn = {
 };
 
 export function parseJs(jsStr) {
+    console.log("Parsing JavaScript code..." , jsStr);
   const splitJs = splitJS(jsStr);
   const decTypeObj = decType(splitJs[0]);
 //   console.log(decTypeObj)
@@ -43,9 +44,10 @@ function decType(declaration) {
   const matches = [...declaration.matchAll(typeRegex)];
 
   const decMatch = matches.map((match) => [match[1], match[2]]);
+  console.log("initial input", declaration);
   console.log("dec match",decMatch)
 
-  if (decMatch) {
+  if (decMatch && decMatch.length > 0) {
     const paramMatch = declaration.match(parameterRegex);
     return [
       decMatch[0][0],

@@ -1,1 +1,109 @@
-"[\n  {\n    \"language\": \"html\",\n    \"name\": \"html\",\n    \"openLine\": 0,\n    \"tagEnd\": 14,\n    \"closeLine\": 114,\n    \"attributes\": {\n      \"lang\": \"*#0\"\n    },\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 0,\n      \"toLine\": 114\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"head\",\n    \"openLine\": 1,\n    \"tagEnd\": 5,\n    \"closeLine\": 73,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 1,\n      \"toLine\": 73\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"meta\",\n    \"openLine\": 2,\n    \"tagEnd\": 19,\n    \"closeLine\": 2,\n    \"attributes\": {\n      \"charset\": \"*#1\"\n    },\n    \"selfClosing\": true,\n    \"children\": []\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"meta\",\n    \"openLine\": 3,\n    \"tagEnd\": 28,\n    \"closeLine\": 3,\n    \"attributes\": {\n      \"name\": \"*#2\",\n      \"content\": \"*#3\"\n    },\n    \"selfClosing\": true,\n    \"children\": []\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"title\",\n    \"openLine\": 4,\n    \"tagEnd\": 6,\n    \"closeLine\": 4,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 4,\n      \"toLine\": 4\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"style\",\n    \"openLine\": 5,\n    \"tagEnd\": 6,\n    \"closeLine\": 72,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 5,\n      \"toLine\": 72\n    }\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"body\",\n    \"attributes\": {\n      \"font-family\": \"Arial, sans-serif\",\n      \"background-color\": \"#f4f4f4\",\n      \"display\": \"flex\",\n      \"justify-content\": \"center\",\n      \"align-items\": \"center\",\n      \"height\": \"100vh\",\n      \"margin\": \"0\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"class\",\n    \"selector\": \".container\",\n    \"attributes\": {\n      \"background\": \"white\",\n      \"padding\": \"20px\",\n      \"border-radius\": \"10px\",\n      \"box-shadow\": \"0 4px 8px rgba(0, 0, 0, 0.2)\",\n      \"width\": \"300px\",\n      \"text-align\": \"center\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"h2\",\n    \"attributes\": {\n      \"margin\": \"0 0 10px\",\n      \"color\": \"#333\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"input\",\n    \"attributes\": {\n      \"width\": \"80%\",\n      \"padding\": \"8px\",\n      \"margin-bottom\": \"10px\",\n      \"border\": \"1px solid #ccc\",\n      \"border-radius\": \"5px\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"button\",\n    \"attributes\": {\n      \"padding\": \"8px 12px\",\n      \"border\": \"none\",\n      \"background\": \"#28a745\",\n      \"color\": \"white\",\n      \"border-radius\": \"5px\",\n      \"cursor\": \"pointer\",\n      \"transition\": \"background 0.3s\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"hover\",\n    \"attributes\": {\n      \"background\": \"#218838\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"ul\",\n    \"attributes\": {\n      \"list-style\": \"none\",\n      \"padding\": \"0\",\n      \"margin-top\": \"10px\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"li\",\n    \"attributes\": {\n      \"background\": \"#f9f9f9\",\n      \"margin\": \"5px 0\",\n      \"padding\": \"8px\",\n      \"border-radius\": \"5px\",\n      \"display\": \"flex\",\n      \"justify-content\": \"space-between\",\n      \"align-items\": \"center\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"class\",\n    \"selector\": \".delete-btn\",\n    \"attributes\": {\n      \"background\": \"#dc3545\",\n      \"border\": \"none\",\n      \"color\": \"white\",\n      \"padding\": \"5px\",\n      \"cursor\": \"pointer\",\n      \"border-radius\": \"5px\",\n      \"transition\": \"background 3.3s\"\n    },\n    \"children\": []\n  },\n  {\n    \"language\": \"css\",\n    \"selectorType\": \"element\",\n    \"selector\": \"hover\",\n    \"attributes\": {\n      \"background\": \"#c82333\"\n    },\n    \"children\": []\n  },\n  null,\n  null,\n  {\n    \"language\": \"html\",\n    \"name\": \"body\",\n    \"openLine\": 18,\n    \"tagEnd\": 5,\n    \"closeLine\": 57,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 18,\n      \"toLine\": 57\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"div\",\n    \"openLine\": 19,\n    \"tagEnd\": 14,\n    \"closeLine\": 24,\n    \"attributes\": {\n      \"class\": \"*#4\"\n    },\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 19,\n      \"toLine\": 24\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"h2\",\n    \"openLine\": 20,\n    \"tagEnd\": 3,\n    \"closeLine\": 20,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 20,\n      \"toLine\": 20\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"input\",\n    \"openLine\": 21,\n    \"tagEnd\": 40,\n    \"closeLine\": 21,\n    \"attributes\": {\n      \"type\": \"*#5\",\n      \"id\": \"*#6\",\n      \"placeholder\": \"*#7\"\n    },\n    \"selfClosing\": true,\n    \"children\": []\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"button\",\n    \"openLine\": 22,\n    \"tagEnd\": 19,\n    \"closeLine\": 22,\n    \"attributes\": {\n      \"onclick\": \"*#8\"\n    },\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 22,\n      \"toLine\": 22\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"ul\",\n    \"openLine\": 23,\n    \"tagEnd\": 10,\n    \"closeLine\": 23,\n    \"attributes\": {\n      \"id\": \"*#9\"\n    },\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 23,\n      \"toLine\": 23\n    }\n  },\n  null,\n  {\n    \"language\": \"html\",\n    \"name\": \"div\",\n    \"openLine\": 25,\n    \"tagEnd\": 4,\n    \"closeLine\": 34,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 25,\n      \"toLine\": 34\n    }\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"input\",\n    \"openLine\": 66,\n    \"tagEnd\": 66,\n    \"closeLine\": 66,\n    \"attributes\": {\n      \"type\": \"*#10\",\n      \"id\": \"*#11\",\n      \"placeholder\": \"*#12\",\n      \"onclick\": \"*#13\",\n      \"JvaL\": \"*#14\"\n    },\n    \"selfClosing\": true,\n    \"children\": []\n  },\n  {\n    \"language\": \"html\",\n    \"name\": \"p\",\n    \"openLine\": 33,\n    \"tagEnd\": 2,\n    \"closeLine\": 33,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 33,\n      \"toLine\": 33\n    }\n  },\n  null,\n  {\n    \"language\": \"html\",\n    \"name\": \"script\",\n    \"openLine\": 35,\n    \"tagEnd\": 7,\n    \"closeLine\": 56,\n    \"attributes\": {},\n    \"selfClosing\": false,\n    \"children\": {\n      \"fromLine\": 35,\n      \"toLine\": 56\n    }\n  },\n  {\n    \"language\": \"javascript\",\n    \"declaration\": {\n      \"text\": \"const foo = *#1\",\n      \"type\": \"const\",\n      \"name\": \"foo\",\n      \"params\": []\n    },\n    \"body\": \"const foo = *#1\"\n  },\n  {\n    \"language\": \"javascript\",\n    \"declaration\": {\n      \"text\": \"function addTask() \",\n      \"type\": \"function\",\n      \"name\": \"addTask\",\n      \"params\": []\n    },\n    \"body\": \" let taskInput = document.getElementById(*#16); let taskText = taskInput.value.trim(); if (taskText === *#17) { alert(*#18); return; } let taskList = document.getElementById(*#19); let li = document.createElement(*#20); li.innerHTML = ` ${taskText} <button class=*#21 onclick=*#22>X</button> `; taskList.appendChild(li); taskInput.value = *#23; \"\n  },\n  {\n    \"language\": \"javascript\",\n    \"declaration\": {\n      \"text\": \"function deleteTask(button, useless, another) \",\n      \"type\": \"function\",\n      \"name\": \"deleteTask\",\n      \"params\": [\n        \"button\",\n        \"useless\",\n        \"another\"\n      ]\n    },\n    \"body\": \" button.parentElement.remove(); \"\n  },\n  null,\n  null,\n  null\n]"
+<html type=*#0 lang=*#1>
+<head>
+<meta charset=*#2 />
+<meta name=*#3 content=*#4 />
+<title>Simple To-Do App</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+.container {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+width: 300px;
+text-align: center;
+}
+h2 {
+margin: 0 0 10px;
+color: #333;
+}
+input {
+width: 80%;
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+button {
+padding: 8px 12px;
+border: none;
+background: #28a745;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+transition: background 0.3s;
+}
+button:hover {
+background: #218838;
+}
+ul {
+list-style: none;
+padding: 0;
+margin-top: 10px;
+}
+li {
+background: #f9f9f9;
+margin: 5px 0;
+padding: 8px;
+border-radius: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.delete-btn {
+background: #dc3545;
+border: none;
+color: white;
+padding: 5px;
+cursor: pointer;
+border-radius: 5px;
+transition: background 3.3s;
+}
+.delete-btn:hover {
+background: #c82333;
+}
+</style>
+</head>
+<body>
+<div class=*#5>
+<h2>To-Do List</h2>
+<input type=*#6 id=*#7 placeholder=*#8 />
+<button onclick=*#9>Add some</button>
+<ul id=*#10></ul>
+</div>
+<div at=*#11 att=*#12 att2=*#13 att3=*#14 att4=*#15 att5=*#16 att6=*#17 att7=*#18 att8=*#19 att9=*#20 >
+<input type=*#21 id=*#22 placeholder=*#23 onclick=*#24 JvaL=*#25 />
+<p>Some content inside</p>
+</div>
+<script>
+const foo = *#26;
+function addTask() {
+let taskInput = document.getElementById(*#27);
+let taskText = taskInput.value.trim();
+if (taskText === *#28) {
+alert(*#29);
+return;
+}
+let taskList = document.getElementById(*#30);
+let li = document.createElement(*#31);
+li.innerHTML = `
+${taskText}
+<button class=*#32 onclick=*#33>X</button>
+`;
+taskList.appendChild(li);
+taskInput.value = *#34;
+}
+function deleteTask(button, useless, another) {
+button.parentElement.remove();
+}
+</script>
+</body>
+</html>

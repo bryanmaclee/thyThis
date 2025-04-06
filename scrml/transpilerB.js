@@ -1,5 +1,5 @@
 // import { buildTagObj, multiLineHtml } from "./dep/mods/buildTagObj";
-import { compiler, transformHTML } from "./dep/mods/transformHTML.js";
+import { compiler, transformHTML, concatMultilineHtmlTags } from "./dep/mods/transformHTML.js";
 import { isCSSSyntax, parseCSS } from "./dep/mods/cssParser.js";
 import { parseJs } from "./dep/mods/jsParserB.js";
 import { buildAst } from "./dep/mods/buildAST.js";
@@ -15,24 +15,22 @@ async function main() {
   const outputFile = "out/output.json";
   const outputText = "out/output.txt";
   const flatJson = "out/flat.json";
+  const outputRaw = "out/outputRaw.txt";
 
   let data = await Bun.file(inputFile).text();
   const lines = await transformHTML(data);
+  const joinedHtml = concatMultilineHtmlTags(lines)
 
   // cycleLines(lines, 0);
-  // console.log(lines);
-  const astLines = analyzeLine(lines, 0, lines.length);
+  // console.log("joinedHtml: ", joinedHtml);
+  const astLines = analyzeLine(joinedHtml, 0, joinedHtml.length);
   // const astWStringReplacements = astLines 
   astLines.push(compiler.stringReplacements);
   // console.log("astLines: ", astLines);
   const jsonFlat = JSON.stringify(astLines, null, 2);
   // console.log(astLines)
   await Bun.write(flatJson, jsonFlat);
-  // console.log(builtLines)
-  // console.log(jsonNested)
-//   const jsonNested = buildAst(builtLines);
-//   await Bun.write(outputFile, JSON.stringify(jsonNested, null, 2));
-  // const
+  await Bun.write(outputText, joinedHtml.join("\n"));
 }
 main().then(() => {
   console.log("Transformation complete. Check outputht.txt for results.");
