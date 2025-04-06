@@ -1,5 +1,7 @@
 import { isCSSSyntax, parseCSS } from "./cssParser.js";
 import { parseJs } from "./jsParserB.js";
+import { transformHTML, compiler } from "./transformHTML.js";
+// import { compiler } from "./compiler.js";
 // import { buildAst } from "./dep/mods/buildAST.js";
 
 export function analyzeLine(lines, startIndex, endIndex) {
@@ -49,66 +51,100 @@ export function analyzeLine(lines, startIndex, endIndex) {
         // Just move to the next line; the parent's buildTagObj handled the range.
         // Or if specifically parsing comments/doctype, add logic here.
       } else {
-        // Multi-line tag opening? Handle appropriately.
-        // This might involve looking ahead similar to buildTagObj's findClosingTag
-        // Or potentially restructuring multiLineHtml if that exists.
-        // For now, just increment to avoid infinite loop on malformed line.
         const tagObj = multiLineTag(lines, tagStart, i);
         if (tagObj) {
-          builtItems.push(tagObj);
-          i = tagObj.closeLine + 1; // Move past the closing line
-        console.warn(
-          "Potential multi-line tag start or malformed tag on line",
-          i
-        );
+          builtItems.push(tagObj[1]);
+          i = tagObj[0] + 1;
       }}
     } else {
       // Line is not empty, has no tag start, and wasn't part of a code block
       // Treat as plain text? Or part of a larger structure?
       // You might need a text node type.
       //  builtItems.push({ type: 'text', content: currentLine, line: i });
-      // const codeBlockInfo = identifyCodeBlock(lines, i, endIndex); // Needs modification
-      // if (codeBlockInfo) {
-      //   console.log("working on line: ", i, lines[i]);
-      //   console.log("codeBlockInfo: ", codeBlockInfo);
-      //   const [blockContent, endLineIndex] = codeBlockInfo;
-      //   let parsedBlock;
-      //   if (isCSSSyntax(blockContent)) {
-      //     parsedBlock = parseCSS(blockContent); // parseCSS should return the object
-      //   } else {
-      //     parsedBlock = parseJs(blockContent); // parseJs should return the object
-      //   }
-      //   // Add language, line info etc. to parsedBlock if not done internally
-      //   builtItems.push(parsedBlock);
-      //   i = endLineIndex + 1; // Jump index past the code block
-      //   continue; // Move to next iteration
-      // }
+      const codeBlockInfo = identifyCodeBlock(lines, i, endIndex); // Needs modification
+      if (codeBlockInfo) {
+        console.log("working on line: ", i, lines[i]);
+        console.log("codeBlockInfo: ", codeBlockInfo);
+        const [blockContent, endLineIndex] = codeBlockInfo;
+        let parsedBlock;
+        if (isCSSSyntax(blockContent)) {
+          parsedBlock = parseCSS(blockContent); // parseCSS should return the object
+        } else {
+          parsedBlock = parseJs(blockContent); // parseJs should return the object
+        }
+        // Add language, line info etc. to parsedBlock if not done internally
+        builtItems.push(parsedBlock);
+        i = endLineIndex + 1; // Jump index past the code block
+        continue; // Move to next iteration
+      }
     }
 
     i++; // Move to the next line by default if nothing else advanced 'i'
   }
-
+// console.log("somp" ,Object.keys(compiler.stringReplacements));
+// console.log(compiler.stringReplacements);
   return builtItems; // Return the items found at this level/range
 }
 
 function multiLineTag(lines, tagStart, i) {
   const multiLineTag = joinMultilineTag(lines, i, i + 1);
   const tagTerminatedAt = multiLineTag[0].indexOf(">", tagStart);
-  return buildTagObj(
-    // lines[i],
-    multiLineTag[0],
+  console.log("multiLineTag: ", multiLineTag[0]);
+
+  return [i, buildTagObj(
+    lines,
+    i,
     tagStart,
-    multiLineTag[0].indexOf(">"),
     tagTerminatedAt,
-    lines
-  );
+    lines.length,
+    multiLineTag[0]
+  )];
 }
 
-export function buildTagObj(lines, i, tagStart, tagEnd, boundaryEndIndex) {
+export function joinMultilineTag(lines, i, j) {
+  while (
+    j < lines.length &&
+    !/\s>/.test(lines[j]) &&
+    !lines[j].includes("/>")
+  ) {
+    j++;
+  }
+  // console.log(lines.slice(i, j + 1).join(" "));
+  return [lines.slice(i, j + 1).join(" "), j];
+}
+
+function buildAttributes(attribs) {
+  return attribs.map((attrib, i) => {
+    if (i == 0) return;
+    if (attrib.includes("=")) {
+      const [key, value] = attrib.split("=");
+      return { [key]: value.replace(/['"]/g, "") };
+    } else if (attrib.endsWith("/")) {
+      return;
+    }
+    return { [attrib]: true };
+  });
+}
+
+function identifyClosingTag(line, elName) {
+  const closingTagRegex = /<\/\w+>/g;
+  return closingTagRegex.test(line) && line.includes(elName);
+}
+
+function findClosingTag(name, lines, i) {
+  while (i < lines.length && !identifyClosingTag(lines[i], name)) {
+    i++;
+  }
+  return i;
+}
+
+
+
+export function buildTagObj(lines, i, tagStart, tagEnd, boundaryEndIndex, MLtag = "") {
   const openTagRegex = /<[^/!][^>]*>/; // More specific opening tag check
   const closeTagRegex = /<\/[^>]+>/;
   const selfCloseEndRegex = /\/\s*>$/; // Check for />
-  const tagLine = lines[i];
+  const tagLine = openTagRegex.test(lines[i]) ? lines[i] : MLtag; ;
   const fullTag = tagLine.slice(tagStart, tagEnd + 1);
 
   // Basic check: if it looks like a closing tag, skip (the parent handles the range)
@@ -158,9 +194,9 @@ export function buildTagObj(lines, i, tagStart, tagEnd, boundaryEndIndex) {
       children = analyzeLine(lines, i + 1, closeLine); // New array, limited range
     } else {
       // No closing tag found within bounds - treat as unclosed or implicitly closed at boundary
-      console.warn(
-        `No closing tag found for <${tagName}> starting on line ${i} within boundary ${boundaryEndIndex}`
-      );
+      // console.warn(
+      //   `No closing tag found for <${tagName}> starting on line ${i} within boundary ${boundaryEndIndex}`
+      // );
       closeLine = boundaryEndIndex - 1; // Or handle as error
       children = analyzeLine(lines, i + 1, boundaryEndIndex); // Analyze content until boundary
     }
@@ -302,39 +338,4 @@ function identifyCodeBlock(lines, i, j) {
 //   };
 // }
 
-function buildAttributes(attribs) {
-  return attribs.map((attrib, i) => {
-    if (i == 0) return;
-    if (attrib.includes("=")) {
-      const [key, value] = attrib.split("=");
-      return { [key]: value.replace(/['"]/g, "") };
-    } else if (attrib.endsWith("/")) {
-      return;
-    }
-    return { [attrib]: true };
-  });
-}
 
-function identifyClosingTag(line, elName) {
-  const closingTagRegex = /<\/\w+>/g;
-  return closingTagRegex.test(line) && line.includes(elName);
-}
-
-function findClosingTag(name, lines, i) {
-  while (i < lines.length && !identifyClosingTag(lines[i], name)) {
-    i++;
-  }
-  return i;
-}
-
-export function joinMultilineTag(lines, i, j) {
-  while (
-    j < lines.length &&
-    !/\s>/.test(lines[j]) &&
-    !lines[j].includes("/>")
-  ) {
-    j++;
-  }
-  // console.log(lines.slice(i, j + 1).join(" "));
-  return [lines.slice(i, j + 1).join(" "), j];
-}

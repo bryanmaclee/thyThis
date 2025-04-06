@@ -15,21 +15,23 @@ function removeComments(data) {
     .replace(/\/\*[\s\S]*?\*\//g, ""); // Remove HTML, JS, and CSS comments
 }
 
-const compiler = {
-  stringReplacements: [],
+export const compiler = {
+  stringReplacements: {},
 };
 
 function replaceQuoteText(data) {
   const regex = /(["'])(?:\\\1|.)*?\1/;
-
   if (regex.test(data)) {
     const newString = data.replace(
       regex,
-      `*#${compiler.stringReplacements.length}`
+      `*#${Object.keys(compiler.stringReplacements).length}`
+      
     );
-    compiler.stringReplacements.push(data.match(regex)[0]);
+    compiler.stringReplacements[`*#${Object.keys(compiler.stringReplacements).length}`] = data.match(regex)[0];
+    console.log(
+      `Replaced string: ${data.match(regex)[0]} with *#${Object.keys(compiler.stringReplacements).length - 1}`
+    );
     return replaceQuoteText(newString);
   }
   return data; // Return the modified data if no more quoted text is found
 }
-

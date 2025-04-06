@@ -1,5 +1,5 @@
 // import { buildTagObj, multiLineHtml } from "./dep/mods/buildTagObj";
-import { transformHTML } from "./dep/mods/transformHTML.js";
+import { compiler, transformHTML } from "./dep/mods/transformHTML.js";
 import { isCSSSyntax, parseCSS } from "./dep/mods/cssParser.js";
 import { parseJs } from "./dep/mods/jsParserB.js";
 import { buildAst } from "./dep/mods/buildAST.js";
@@ -22,6 +22,9 @@ async function main() {
   // cycleLines(lines, 0);
   // console.log(lines);
   const astLines = analyzeLine(lines, 0, lines.length);
+  // const astWStringReplacements = astLines 
+  astLines.push(compiler.stringReplacements);
+  // console.log("astLines: ", astLines);
   const jsonFlat = JSON.stringify(astLines, null, 2);
   // console.log(astLines)
   await Bun.write(flatJson, jsonFlat);
@@ -41,7 +44,7 @@ function identifyNextToken(state) {
   // const firstToken = firstOccurrenceOf(line, fragments);
   const line = state.line;
   const lineIndex = state.index;
-  console.log("line: ", line[1]);
+  // console.log("line: ", line[1]);
   const tokensInLine = [];
   const firstToken = { index: line.length, value: null };
   for (let i in fragments.arbitraryStatementOpeners) {

@@ -135,9 +135,24 @@
             "children": [
               {
                 "language": "html",
-                "name": "",
-                "openLine": 0,
-                "closeLine": null,
+                "name": "input",
+                "openLine": 82,
+                "closeLine": 82,
+                "attributes": {
+                  "type": "*#11",
+                  "id": "*#12",
+                  "placeholder": "*#13",
+                  "onclick": "*#14",
+                  "JvaL": "*#15"
+                },
+                "selfClosing": true,
+                "children": []
+              },
+              {
+                "language": "html",
+                "name": "p",
+                "openLine": 89,
+                "closeLine": 89,
                 "attributes": {},
                 "selfClosing": false,
                 "children": []
@@ -169,5 +184,32 @@
         ]
       }
     ]
+  },
+  {
+    "*#0": "\"doc\"",
+    "*#1": "\"en\"",
+    "*#2": "'UTF-8'",
+    "*#3": "\"viewport\"",
+    "*#4": "\"width=device-width, initial-scale=1.0\"",
+    "*#5": "\"container\"",
+    "*#6": "\"text\"",
+    "*#7": "\"taskInput\"",
+    "*#8": "\"Enter a task\"",
+    "*#9": "\"addTask()\"",
+    "*#10": "\"taskList\"",
+    "*#11": "\"text\"",
+    "*#12": "\"taskInput\"",
+    "*#13": "\"Enter a task\"",
+    "*#14": "\"alert('Clicked!')\"",
+    "*#15": "\"taskText.trim()\"",
+    "*#16": "\"bar\"",
+    "*#17": "\"taskInput\"",
+    "*#18": "\"\"",
+    "*#19": "\"Please enter a task!\"",
+    "*#20": "\"taskList\"",
+    "*#21": "\"li\"",
+    "*#22": "\"delete-btn\"",
+    "*#23": "\"deleteTask(this)\"",
+    "*#24": "\"\""
   }
 ]

@@ -9,6 +9,7 @@ export function transformHTML(data) {
 }
 
 function removeComments(data) {
+  console.log("Removing comments from HTML");
   return data
     .replace(/<!--[\s\S]*?-->/g, "")
     .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, "")
@@ -17,8 +18,9 @@ function removeComments(data) {
 
 function replaceQuoteText(data) {
   const regex = /(["'])(?:\\\1|.)*?\1/;
-  const stringReplacements = [];
+  // const stringReplacements = [];
 
+  console.log("yo yo yo");
   if (regex.test(data)) {
     const newString = data.replace(
       regex,
@@ -27,6 +29,9 @@ function replaceQuoteText(data) {
     compiler.stringReplacements.push(data.match(regex)[0]);
     return replaceQuoteText(newString);
   }
+  console.log(
+    `Replaced string: ${data.match(regex)[0]} with *#${compiler.stringReplacements.length - 1}`
+  );
   return {data, stringReplacements}; // Return the modified data if no more quoted text is found
 }
 

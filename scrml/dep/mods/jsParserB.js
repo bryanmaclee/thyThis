@@ -43,7 +43,7 @@ function decType(declaration) {
   const matches = [...declaration.matchAll(typeRegex)];
 
   const decMatch = matches.map((match) => [match[1], match[2]]);
-//   console.log(decMatch)
+  console.log("dec match",decMatch)
 
   if (decMatch) {
     const paramMatch = declaration.match(parameterRegex);
